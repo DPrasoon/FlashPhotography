@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Photography</title>
+    
+    <!-- font-awesome cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+        integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+
+        /* section 1 */
+        div.section1 {
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+        }
+
+        .landing-bg {
+            width: 100vw;
+            position: absolute;
+        }
+
+        .flash {
+            position: absolute;
+            margin-top: 20px;
+            margin-left: 20px;
+            overflow: hidden;
+            width: 100vw;
+            font-size: 40px !important;
+        }
+
+        .logo {
+            font-weight: 400;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+            margin-bottom: 5px;
+        }
+
+        /* navbar */
+        .main-nav {
+            position: absolute;
+            margin-top: 20px;
+            margin-right: 20px;
+            overflow: hidden;
+            width: 100vw;
+        }
+
+        .nav-item {
+            text-align: center;
+            padding-right: 20px;
+            padding-left: 20px;
+            text-decoration: none;
+            float: right;
+            color: white;
+            font-size: 25px;
+        }
+
+        .nav-item:hover {
+            scale: 1.1;
+        }
+
+        /* label */
+        .main-label {
+            position: absolute;
+            margin-top: 200px;
+            width: 50vw;
+            margin-left: 100px;
+        }
+
+        .intro {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        h1.intro {
+            font-size: 45px;
+            font-weight: 800;
+            line-height: 1.3;
+        }
+
+        .btn-touch {
+            width: 150px;
+            height: 50px;
+            font-size: 15px;
+            border-radius: 25px;
+            background-color: blueviolet;
+            border: none;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        .btn-touch:hover {
+            background-color: black;
+            border: blueviolet 2px solid;
+        }
+
+        .get-link {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* section2 */
+
+        .section2 {
+            width: 100vw;
+            height: auto;
+        }
+
+        .column {
+            justify-content: center;
+            display: flex;
+            padding-top: 50px;
+        }
+
+        .aboutimage {
+            float: left;
+            display: inline;
+            height: 70vh;
+            width: 60vh;
+            background-image: url("about.jpg");
+            background-size: cover;
+        }
+
+        .abouttext {
+            float: left;
+            display: inline;
+            height: 70vh;
+            width: 80vh;
+        }
+
+        /* section3 */
+
+        .section3 {
+            width: 100vw;
+            height: auto;
+            background-color: #f7f7f7;
+        }
+
+        .column2 {
+            justify-content: center;
+            display: flex;
+        }
+
+        .service-image {
+            float: left;
+            display: inline;
+            height: 60vh;
+            width: 50vh;
+            background-size: cover;
+            margin: 20px;
+            position: relative;
+        }
+
+        .service-image:hover {
+            transform: rotate(3deg) scale(1.1, 1.1);
+        }
+
+        .purple-box {
+            position: absolute;
+            margin-top: 322px;
+            width: inherit;
+            height: 100px;
+            background-color: blueviolet;
+            opacity: 0.5;
+        }
+
+        .transparent-box {
+            position: absolute;
+            margin-top: 340px;
+            margin-left: 20px;
+            width: inherit;
+            height: 80px;
+        }
+
+        .btn-white:hover {
+            background-color: #f7f7f7;
+        }
+
+        .btn-white:hover>.get-link-white {
+            color: black;
+        }
+
+        /* section4 */
+
+        .section4 {
+            width: 100vw;
+            height: auto;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .work:hover>.hidden {
+            display: inline;
+            text-align: center;
+            margin-left: 0px;
+        }
+
+        .work:hover {
+            transform: scale(1.1, 1.1);
+        }
+
+        /* section 5 */
+        div.section5 {
+            width: 100vw;
+            height: 70vh;
+            background-color: #0d0d0d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .review-bg {
+            width: 65vw;
+            position: absolute;
+            opacity: .6;
+        }
+
+        .review {
+            width: 40vw;
+            position: relative;
+            display: inline;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .review-head {
+            font-size: 20px;
+            margin-bottom: 25px;
+            color: #ffc209;
+            width: 400px;
+        }
+
+        .review-content {
+            font-size: 16px;
+            color: #fff;
+            width: 400px;
+        }
+
+        .reviewer {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 5px;
+            color: #fff;
+            width: 400px;
+            margin-left: 150px;
+        }
+
+        .reviewer-bio {
+            font-size: 14px;
+            color: #fff;
+            width: 400px;
+            margin-left: 150px;
+        }
+
+        /* section6 */
+
+        .column3 {
+            justify-content: center;
+            display: flex;
+            background-color: #fff;
+        }
+
+        .team-image {
+            float: left;
+            display: inline;
+            height: 50vh;
+            width: 40vh;
+            background-size: cover;
+            margin: 50px;
+            position: relative;
+        }
+
+        .team-info {
+            /* bottom: 10px;
+            left: -10px; */
+            position: absolute;
+            transform-origin: bottom left;
+            transform: rotate(-90deg);
+            color: #000;
+            font-size: 15px;
+            font-weight: normal;
+            line-height: 24px;
+
+            position: absolute;
+            margin-top: 292px;
+            /* margin-left: -560px; */
+            width: 50vh;
+            height: 60px;
+            background-color: #f7f7f7;
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .team-name {
+            display: block;
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 20px;
+            color: #333;
+            line-height: 1.3;
+            float: left;
+            margin-left: 20px;
+        }
+
+        .team-detail {
+            display: inline-block;
+            font-size: 14px;
+            padding-left: 20px;
+            margin-top: 22px;
+            position: relative;
+            font-weight: normal;
+            line-height: 1.3;
+        }
+
+        .team-info-box {
+            position: absolute;
+            margin-top: 350px;
+            width: inherit;
+            height: 40px;
+        }
+
+        .team-social {
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+
+        li {
+            float: left;
+            padding-left: 40px;
+            padding-top: 20px;
+        }
+
+        li:hover {
+            scale: 1.2;
+        }
+
+        /* section7 */
+
+        .blog-box {
+            background-color: #fff;
+            float: left;
+            display: inline;
+            height: 55vh;
+            width: 50vh;
+            background-size: cover;
+            margin: 30px;
+            position: relative;
+        }
+
+        .blog-image {
+            scale: 0.6;
+            margin-left: -75px;
+            margin-top: -40px;
+        }
+
+        .blog-text {
+            width: 40vh;
+            height: 50vh;
+            margin-left: 20px;
+            margin-top: -50px;
+            display: inline-block;
+            position: absolute;
+        }
+
+        .blog-text:hover {
+            color: blueviolet;
+        }
+
+        .blog-button {
+            position: relative;
+            width: 25vh;
+            height: 40px;
+            margin-top: 10px;
+            margin-left: 20px;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .blog-button:hover {
+            scale: 1.05;
+        }
+
+        .a-blog {
+            text-decoration: none;
+            color: #0d0d0d;
+        }
+
+        .blog-box:hover {
+            transform: scale(1.1, 1.1);
+        }
+
+        /* section8 */
+        .contact-info {
+            float: left;
+            display: inline;
+            height: 60vh;
+            width: 70vh;
+            margin: 20px;
+            position: relative;
+        }
+
+        .contact-text {
+            text-align: left;
+            margin-top: -15px;
+            color: #555;
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .lbl {
+            width: 100%;
+            padding: 10px 20px;
+            color: #000;
+            border: 0;
+            font-size: 14px;
+            padding-left: 15px;
+            background-color: #f7f7f7;
+            font-weight: bold;
+            border-radius: 0px;
+            text-transform: capitalize;
+            border-bottom: 2px solid #555;
+            accent-color: #555;
+        }
+
+        textarea {
+            overflow: auto;
+            resize: vertical;
+            accent-color: #555;
+            width: 100%;
+            padding: 10px 20px;
+            color: #000;
+            border: 0;
+            font-size: 16px;
+            padding-left: 15px;
+            background-color: #f7f7f7;
+            border-radius: 0px;
+            font-weight: bolder;
+            text-transform: capitalize;
+            border-bottom: 2px solid #555;
+        }
+
+        /* section9 */
+        .section9 {
+            width: 100vw;
+            height: auto;
+            background-color: #000;
+        }
+
+        .footer-block {
+            float: left;
+            display: inline;
+            height: 40vh;
+            width: 40vh;
+            background-size: cover;
+            margin: 20px;
+            position: relative;
+        }
+
+        .footer-head {
+            position: absolute;
+            margin-top: 80px;
+            width: inherit;
+            height: 100px;
+        }
+
+        .yellow-text {
+            color: #ffc209;
+            font-weight: 700;
+            line-height: 1.3;
+            font-size: 20px;
+        }
+
+        .white-text {
+            color: #f7f7f7;
+        }
+
+        li.foot {
+            float: left;
+            padding-left: 0px !important;
+        }
+
+        .back-to-top {
+            display: inline;
+            position: fixed;
+            color: #fff;
+            width: 40px;
+            height: 42px;
+            line-height: 45px;
+            border-radius: 0;
+            right: 25px;
+            bottom: 20px;
+            text-align: center;
+            background: #793be8;
+            transition: background 0.5s;
+            z-index: 11;
+            text-decoration: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- section 1-->
+    <div class="section1" id="home">
+        <img class="landing-bg" src="./home-bg.png" alt="">
+        <div class="flash logo yellow-text">Flash</div>
+        <!-- navbar -->
+        <!-- <div class="main-nav" style="position: fixed; background-color: black; z-index: 2;"> -->
+        <div class="main-nav">
+            <a href="#contact" class="nav-item">Contact</a>
+            <a href="#blog" class="nav-item">Blog</a>
+            <a href="#team" class="nav-item">Team</a>
+            <a href="#review" class="nav-item">Review</a>
+            <a href="#project" class="nav-item">Project</a>
+            <a href="#service" class="nav-item">Service</a>
+            <a href="#about" class="nav-item">About</a>
+            <a href="#home" class="nav-item">Home</a>
+        </div>
+
+        <div class="main-label">
+            <h1 class="intro">Professional Photographer</h1>
+            <p class="intro">We are currently available for freelance photo and video work. I specialize in nature,
+                animals,
+                lifestyle, and landscape photography but also have professional experience with brand and product
+                photography.</p>
+            <div class="btn-touch">
+                <a class="get-link" href="#contact">Get in touch</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- section 2 about-->
+
+    <div class="section2" id="about">
+        <h1 style="text-align: center; padding-top:50px ;">Flash <span style="color: #ffc209;">Photography</span></h1>
+        <div class="column">
+            <div class="aboutimage"></div>
+            <div class="abouttext">
+                <div style="margin-left: 20px; margin-top: 80px;">
+                    <h3>Welcome to <span style="color: #ffc209;">Flash</span></h3>
+                    <p>Hello We are became interested in landscape photography about five years ago when I moved to New
+                        York City. I had a full-time job during the week and spent my weekends getting as far away from
+                        the city as possible. I went on wonderful adventures upstate, away from all the crowds and into
+                        the peace and beauty of nature. Photographing the state parks of New York inspired me to spend
+                        my life traveling the world taking pictures.</p>
+
+                    <p>We are currently available for freelance photo and video work. I specialize in nature, animals,
+                        lifestyle, and landscape photography but also have professional experience with brand and
+                        product photography.</p>
+
+                    <span><strong>Name</strong>: Flash Photography</span> <span
+                        style="padding-left:60px"><strong>Phone</strong>: +105 773 321 7771</span>
+                    <br>
+                    <span><strong>Age</strong>: 25 Years</span> <span
+                        style="padding-left:145px"><strong>E-mail</strong>: demo@example.com</span>
+                    <br>
+                    <span><strong>Skype</strong>: flash-photographym</span> <span
+                        style="padding-left:45px"><strong>Address</strong>: New York</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- section 3 service-->
+    <div class="section3" id="service">
+        <h1 style="text-align: center; padding-top:50px ;">Our <span style="color: #ffc209;">Services</span></h1>
+        <div class="column2">
+            <div class="service-image" style="background-image: url('01.jpg'); ">
+                <div class="purple-box">
+                </div>
+                <div class="transparent-box">
+                    <i class='fa fa-camera-retro' style='font-size:24px; color: white;'></i>
+                    <h3 style="color:white; margin-top: 10px;">Wedding Shoots</h3>
+                </div>
+            </div>
+            <div class="service-image" style="background-image: url('02.jpg'); ">
+                <div class="purple-box">
+                </div>
+                <div class="transparent-box">
+                    <i class='fa fa-camera-retro' style='font-size:24px; color: white;'></i>
+                    <h3 style="color:white; margin-top: 10px;">Portrait Photography</h3>
+                </div>
+            </div>
+            <div class="service-image" style="background-image: url('03.jpg'); ">
+                <div class="purple-box">
+                </div>
+                <div class="transparent-box">
+                    <i class='fa fa-camera-retro' style='font-size:24px; color: white;'></i>
+                    <h3 style="color:white; margin-top: 10px;">Travel Photography</h3>
+                </div>
+            </div>
+        </div>
+        <div class="column2">
+            <div class="service-image" style="background-image: url('04.jpg'); ">
+                <div class="purple-box">
+                </div>
+                <div class="transparent-box">
+                    <i class='fa fa-camera-retro' style='font-size:24px; color: white;'></i>
+                    <h3 style="color:white; margin-top: 10px;">Product Photography</h3>
+                </div>
+            </div>
+            <div class="service-image" style="background-image: url('05.jpg'); ">
+                <div class="purple-box">
+                </div>
+                <div class="transparent-box">
+                    <i class='fa fa-camera-retro' style='font-size:24px; color: white;'></i>
+                    <h3 style="color:white; margin-top: 10px;">Fashion Photography</h3>
+                </div>
+            </div>
+            <div class="service-image" style="background-image: url('06.jpg'); ">
+                <div class="purple-box">
+                </div>
+                <div class="transparent-box">
+                    <i class='fa fa-camera-retro' style='font-size:24px; color: white;'></i>
+                    <h3 style="color:white; margin-top: 10px;">Sports Photography</h3>
+                </div>
+            </div>
+        </div>
+        <h5 style="text-align: center; font-size: 13px; letter-spacing: 2px; color:#333">We can't wait to meet you.</h5>
+        <div style="justify-content: center; align-items: center; display: flex; padding-bottom: 20px;">
+            <div class="btn-touch btn-white">
+                <a class="get-link get-link-white" href="#contact">Get in touch</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- section 4 project-->
+    <div class="section4" id="project">
+        <h1 style="text-align: center; padding-top:50px ;">Recent <span style="color: #ffc209;">Shots</span></h1>
+        <div class="column2">
+            <div class="service-image work" style="background-image: url('work-1.jpg'); ">
+                <div class="purple-box hidden">
+                </div>
+                <div class="transparent-box hidden">
+                    <h3 style="color:white; margin-top: 10px; margin-left:-10px;">Wedding Shoots</h3>
+                </div>
+            </div>
+            <div class="service-image work" style="background-image: url('work-2.jpg'); ">
+                <div class="purple-box hidden">
+                </div>
+                <div class="transparent-box hidden">
+                    <h3 style="color:white; margin-top: 10px;">Travel Photography</h3>
+                </div>
+            </div>
+            <div class="service-image work" style="background-image: url('work-3.jpg'); ">
+                <div class="purple-box hidden">
+                </div>
+                <div class="transparent-box hidden">
+                    <h3 style="color:white; margin-top: 10px;">Wedding Shoots</h3>
+                </div>
+            </div>
+        </div>
+        <div class="column2">
+            <div class="service-image work" style="background-image: url('work-5.jpg'); ">
+                <div class="purple-box hidden">
+                </div>
+                <div class="transparent-box hidden">
+                    <h3 style="color:white; margin-top: 10px;">Travel Photography</h3>
+                </div>
+            </div>
+            <div class="service-image work" style="background-image: url('work-4.jpg'); ">
+                <div class="purple-box hidden">
+                </div>
+                <div class="transparent-box hidden">
+                    <h3 style="color:white; margin-top: 10px;">Fashion Photography</h3>
+                </div>
+            </div>
+            <div class="service-image work" style="background-image: url('work-6.jpg'); ">
+                <div class="purple-box hidden">
+                </div>
+                <div class="transparent-box hidden">
+                    <h3 style="color:white; margin-top: 10px;">Fashion Photography</h3>
+                </div>
+            </div>
+        </div>
+        <div style="justify-content: center; align-items: center; display: flex; padding-bottom: 20px;">
+            <div class="btn-touch btn-white">
+                <a class="get-link get-link-white" href="#">Follow Us</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- section 5 review-->
+    <div class="section5" id="review">
+        <img class="review-bg" src="./home-bg.png" alt="">
+        <marquee behavior="scroll" direction="left" onmouseover="m1.stop(), m2.stop()"
+            onmouseout="m1.start(), m2.start()" style="position: absolute; z-index: 1;" id="m1">
+            <div class="review">
+                <h3 class="review-head">"We received our photos and USB- we absolutely love them, they are fantastic!!"
+                </h3>
+                <p class="review-content">Thank you so much for doing such an amazing job. We are so happy 😊 Thank you
+                    so much again. Take care of yourself and your family.</p>
+                <p class="review-content">They are absolutely beautiful. You managed to capture so much perfectly. Thank
+                    you so much for your
+                    professionalism, you made the day that much more relaxed and enjoyable.</p>
+                <h3 class="reviewer">Rose Hopkins</h3><span class="reviewer-bio">Founder of LogiFy</span>
+            </div>
+        </marquee>
+        <marquee behavior="scroll" direction="left" onmouseover="m1.stop(), m2.stop()"
+            onmouseout="m1.start(), m2.start()" style="position: absolute;" id="m2">
+            <div style="width: 500px; background-color: black; opacity: 0.3; height:400px; margin-left:-65px"></div>
+        </marquee>
+    </div>
+
+
+    <!-- section 6 team-->
+    <div class="section4" style="margin-top: -20px;" id="team">
+        <h1 style="text-align: center; padding-top:50px ;">Photographer <span style="color: #ffc209;">Team</span></h1>
+        <div class="column3">
+            <div class="team-image" style="background-image: url('team-1.jpg'); ">
+                <div class="team-info">
+                    <h4 class="team-name">Ava Farrington</h4>
+                    <h6 class="team-detail">/&nbsp;&nbsp;&nbsp;&nbsp;Wedding Photographer</h6>
+                </div>
+                <div class="team-info-box">
+                    <ul class="team-social">
+                        <li><a href="#"><i class="fa fa-facebook" style="font-size:24px;color:#333;"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-twitter" style="font-size:24px;color:#333"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-instagram" style="font-size:24px;color:#333"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-youtube" style="font-size:24px;color:#333"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="team-image" style="background-image: url('team-2.jpg'); ">
+                <div class="team-info">
+                    <h4 class="team-name">Alishia Fulton</h4>
+                    <h6 class="team-detail">/&nbsp;&nbsp;&nbsp;&nbsp;Model Photographer</h6>
+                </div>
+                <div class="team-info-box">
+                    <ul class="team-social">
+                        <li><a href="#"><i class="fa fa-facebook" style="font-size:24px;color:#333"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-twitter" style="font-size:24px;color:#333"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-instagram" style="font-size:24px;color:#333"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-youtube" style="font-size:24px;color:#333"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="team-image" style="background-image: url('team-3.jpg'); ">
+                <div class="team-info">
+                    <h4 class="team-name">Kevin Haley</h4>
+                    <h6 class="team-detail">/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Travel Photographer</h6>
+                </div>
+                <div class="team-info-box">
+                    <ul class="team-social">
+                        <li><a href="#"><i class="fa fa-facebook" style="font-size:24px;color:#333"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-twitter" style="font-size:24px;color:#333"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-instagram" style="font-size:24px;color:#333"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-youtube" style="font-size:24px;color:#333"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- section 7 blog-->
+    <div class="section3" id="blog">
+        <h1 style="text-align: center; padding-top:50px ;">Blog <span style="color: #ffc209;">& Update</span></h1>
+        <div class="column2">
+            <div class="blog-box">
+                <img src="1.jpg" alt="" class="blog-image">
+                <div class="blog-text">
+                    Engage your clients in meaningful conversations</div>
+                <div class="blog-button"><a href="#blog" class="a-blog">Wedding Shoots</a></div>
+
+            </div>
+            <div class="blog-box">
+                <img src="2.jpg" alt="" class="blog-image">
+                <div class="blog-text">
+                    Weave words naturally that complement your photos</div>
+                <div class="blog-button"><a href="#blog" class="a-blog">Travel Photography</a></div>
+            </div>
+            <div class="blog-box">
+                <img src="3.jpg" alt="" class="blog-image">
+                <div class="blog-text">
+                    Weddings and other sessions that photographers like
+                </div>
+                <div class="blog-button"><a href="#blog" class="a-blog">Fashion Photography</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- section 8 contact-->
+    <div class="section2" id="contact">
+        <h1 style="text-align: center; padding-top:50px ;">Let's <span style="color: #ffc209;">Talk</span></h1>
+        <div class="column2">
+            <div class="contact-info">
+                <h2 style="text-align: left; ">Let's work together</h2>
+                <p class="contact-text">We are available at -</p>
+                <br>
+                <h3 style="text-align: left; ">Phone</h3>
+                <p class="contact-text">+105 773 321 7771</p>
+                <br>
+                <h3 style="text-align: left; ">Address</h3>
+                <p class="contact-text">4 South Birchwood Ave.</p>
+                <br>
+                <h3 style="text-align: left;">Email</h3>
+                <p class="contact-text">demo@example.com</p>
+            </div>
+            <div class="contact-info">
+                <form action="#" method="get">
+                    <label for="txtname">Name</label><br>
+                    <input type="text" class="lbl" id="txtname" placeholder="Type your name"
+                        required="required"><br><br>
+                    <label for="txtemail">Email</label><br>
+                    <input type="email" class="lbl" id="txtemail" placeholder="Type your email"
+                        required="required"><br><br>
+                    <label for="txtsub">Subject</label><br>
+                    <input type="text" class="lbl" id="txtsub" placeholder="Type your subject"
+                        required="required"><br><br>
+                    <label for="txtmessage">Message</label><br>
+                    <textarea id="txtmessage" placeholder="Type Your Message" rows="4"
+                        required="required"></textarea><br><br>
+                    <div class="btn-touch btn-white">
+                        <button class="get-link get-link-white btn-touch btn-white" type="submit">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- section9 footer-->
+
+        <div class="section9">
+            <div class="column2">
+                <div class="footer-block">
+                    <div class="footer-head" style="z-index: 1;">
+                        <h3 class="yellow-text logo">Flash</h3>
+                        <p class="white-text">Copyright © 2022</p>
+                        <p class="white-text">Designed by Prasoon Dubey</p>
+                    </div>
+                </div>
+                <div class="footer-block">
+                    <div class="footer-head" style="z-index: 1;">
+                        <h3 class="yellow-text">GET IN TOUCH</h3>
+                        <p class="white-text"><a href="mailto:demo@example.com" style="text-decoration: none;" class="white-text">demo@example.com</a> </p>
+                        <p class="white-text">+101 557-113-777</p>
+                    </div>
+                </div>
+                <div class="footer-block">
+                    <div class="footer-head" style="z-index: 1;">
+                        <h3 class="yellow-text">LOCATION</h3>
+                        <p class="white-text">4172 Washburn Street</p>
+                        <p class="white-text">Baton Rouge - Louisiana.</p>
+                    </div>
+                </div>
+                <div class="footer-block">
+                    <div class="footer-head" style="z-index: 1;">
+                        <h3 class="yellow-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FOLLOW US</h3>
+                        <ul class="team-social">
+                            <li class="foot"><a href="#"><i class="fa fa-facebook"
+                                        style="font-size:24px;color:#fff;"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-twitter" style="font-size:24px;color:#fff"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-instagram" style="font-size:24px;color:#fff"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-youtube" style="font-size:24px;color:#fff"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- back to top -->
+        <a href="#" class="back-to-top"><i class="fa fa-caret-up"></i></a>
+</body>
+
+</html>
